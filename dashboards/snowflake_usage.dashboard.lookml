@@ -1,5 +1,5 @@
 - dashboard: snowflake_usage
-  title: Snowflake Usage
+  title: Snowflake Usage Monitor v2
   layout: newspaper
   elements:
   - title: Average Execution Time by User (Last 4 Weeks)
