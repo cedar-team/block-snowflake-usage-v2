@@ -195,4 +195,25 @@ view: table_storage_metrics {
     type: count
     drill_fields: [table_name]
   }
+
+  measure: active_tb {
+    type: sum
+    sql: ${active_bytes}/power(1024,4);;
+  }
+  measure: time_travel_tb {
+    type: sum
+    sql: ${time_travel_bytes}/power(1024,4);;
+  }
+  measure: failsafe_tb {
+    type: sum
+    sql: ${failsafe_bytes}/power(1024,4);;
+  }
+  measure: retained_for_cloned_tb {
+    type: sum
+    sql: ${retained_for_cloned_bytes}/power(1024,4);;
+  }
+  measure: total_tb {
+    type: sum
+    sql: (${active_bytes}+${time_travel_bytes}+${failsafe_bytes}+${retained_for_cloned_bytes})/power(1024,4);;
+  }
 }
