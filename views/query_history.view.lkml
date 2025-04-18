@@ -34,6 +34,11 @@ view: query_history {
     sql: PARSE_JSON(regexp_substr(regexp_substr(query_text, 'Query\\sContext\\s\'\{.*\}\''),'\{.*\}')) ;;
   }
 
+  dimension: extracted_table {
+    type: string
+    sql: REGEXP_SUBSTR(query_text,'from\\s+([a-zA-Z0-9_\\.]+)', 1, 1, 'ie', 1) ;;
+  }
+
   dimension: looker_history_id {
     type: number
     sql: ${looker_query_context}:history_id ;;

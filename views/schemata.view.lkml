@@ -13,7 +13,7 @@ view: schemata {
   }
 
   dimension: catalog_name {
-    type: number
+    type: string
     sql: ${TABLE}.CATALOG_NAME ;;
     description: "Database that the schema belongs to"
   }
